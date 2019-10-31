@@ -1,0 +1,105 @@
+<div class="checkout-comp">
+    <div class="checkout-title">
+        <h1> Checkout:</h1>
+    </div>
+
+    <div class="checkout-address">
+        <form (submit)="confirmOrder(shipaddress)">
+
+            <h3>Shipping Address:</h3>
+                <mat-form-field>
+                        <mat-label> &nbsp; Door No/Plot No</mat-label>
+                        <input
+                         matInput 
+                         name="doorno"
+                         type="text" 
+                         placeholder="Eg., No.402.."  
+                         [(ngModel)]="shipaddress.doorno"
+                         required/>
+                </mat-form-field>
+
+                &nbsp; &nbsp;
+
+                <mat-form-field>
+                        <mat-label> &nbsp; Street / Area</mat-label>
+                        <input 
+                        type="text" 
+                        name="street"
+                        matInput 
+                        required
+                        [(ngModel)]="shipaddress.street"
+                        />
+                </mat-form-field>
+
+                &nbsp; &nbsp;
+
+                <mat-form-field>
+                        <mat-label> &nbsp; Locality</mat-label>
+                        <input 
+                        type="text" 
+                        name="locality"
+                        matInput 
+                        required
+                        [(ngModel)]="shipaddress.locality"
+                        />
+                </mat-form-field>
+
+                <br>
+
+                <mat-form-field>
+                        <mat-label> &nbsp; City</mat-label>
+                        <input 
+                        type="text" 
+                        name="city"
+                        matInput 
+                        required
+                        [(ngModel)]="shipaddress.city"
+                        />
+                </mat-form-field>
+
+                &nbsp; &nbsp;
+
+                <mat-form-field>
+                        <mat-label> &nbsp; State</mat-label>
+                        <input 
+                        type="text" 
+                        name="state"
+                        matInput 
+                        required
+                        [(ngModel)]="shipaddress.state"
+                        />
+                </mat-form-field>
+
+                &nbsp; &nbsp;
+
+                <mat-form-field>
+                        <mat-label> &nbsp; Pincode</mat-label>
+                        <input 
+                        type="number" 
+                        name="pincode"
+                        max="6" 
+                        min="6" 
+                        size="6" 
+                        matInput 
+                        [(ngModel)]="shipaddress.pincode"
+                        required/>
+                </mat-form-field>
+
+                <br>
+
+                <h3>Payment Options:</h3>
+                <mat-radio-group>
+                    <mat-radio-button  matTooltip="Only COD is available for now" matTooltipPosition="right">
+                        Cash On Delivery
+                    </mat-radio-button>
+                
+                </mat-radio-group>
+
+                <br><br><br>
+
+                <button type="submit" style="background: blue;color:white;" mat-raised-button>Confirm Order</button>
+
+        </form>
+    </div>
+    
+</div>

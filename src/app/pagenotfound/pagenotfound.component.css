@@ -1,0 +1,22 @@
+#pagenotfound-title
+{
+    color: rgb(9, 0, 92);
+    text-align: center;
+    font-size: 36pt;
+    font-weight: bold;
+
+}
+
+#pagenotfound-desc
+{
+    color: rgb(9, 0, 92);
+    text-align: center;
+
+}
+
+a:active, a::after, a:visited
+{
+    text-decoration: none;
+    color: rgb(9, 0, 92);
+
+}

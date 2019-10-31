@@ -1,0 +1,30 @@
+.logout-dialog
+{
+    height: 250px;
+    margin: 15px;
+}
+
+#logout-qn
+{
+    text-align: center;
+}
+
+/* .logout-options
+{
+    text-align: center;
+    align-content: center;
+} */
+
+.logout-options
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-button
+{
+    margin: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+}

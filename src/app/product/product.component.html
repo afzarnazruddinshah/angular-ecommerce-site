@@ -1,0 +1,23 @@
+
+
+<div class="card">
+   <i [(class)]="wishlistClass" 
+   (click)="wishlistThis($event)" 
+   [attr.title]="wishlistClass==='fas fa-trash-alt'? 'Remove from wishlist': 'Add to Wishlist'">
+</i>
+
+
+    <h2 (click)="goProdDesc(prod)" appProdheader> {{ prod.prodname }} </h2>  
+    <p> {{ prod.prodqty }}  &nbsp; &nbsp; | &nbsp;  &nbsp; 
+    {{  prod.prodprice | currency:'INR' }} </p>
+
+
+ <small
+ id="availability" 
+ [style.background]="qtyInStock(prod.availability) ? 'green': 'red'">
+  {{ prod.availability}} 
+    </small>
+
+</div>
+
+

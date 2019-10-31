@@ -1,0 +1,120 @@
+#app-home-title
+{
+    text-align: center;
+    font-size: 32pt;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#app-home-desc
+{
+    font-size: 14pt;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {
+      margin: 0 -5px;
+      position: relative;
+      left: 150px;
+      width: 1000px;
+      /* border: 1px solid black; */
+    }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 8px 5px 0 rgba(56, 34, 255, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #dadada;
+    margin: 8px;
+    margin-bottom: 10px;
+  }
+
+  .card:hover
+  {
+    box-shadow: 5px 2px 20px rgb(148, 148, 148);
+  }
+
+  .footer
+  {
+      bottom:10px;
+      text-align: center;
+      margin-top: 0px;
+      min-height: 20px;
+      max-height: 45px;
+      background: rgb(83, 255, 40);
+      color: black;
+      padding-bottom: 10px; 
+    
+  }
+
+  #availability
+  {
+    background: rgb(38, 255, 67);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+
+
+  .filters
+  {
+    z-index: 999; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    float:right;
+    right: 235px;
+    background: white;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 900px;
+    max-height: 80px;
+  }
+
+  .filter-options
+  {
+    position: sticky;
+    position: -webkit-sticky;
+    float: right;
+    right: 30px;
+  }
+
+  .app-home
+  {
+    max-height: 600px;
+    overflow: scroll;
+  }

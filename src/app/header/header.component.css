@@ -1,0 +1,86 @@
+.header
+{
+    position: sticky;
+    top: 0px;
+}
+
+.app-header
+{
+    max-height: 40px;
+    border: 1px solid blue;
+    background: blue;
+    color: white;
+    padding: 20px;
+    height: 27px;
+
+}
+.app-title
+{
+    font-size: 20pt;
+    position: absolute;
+    float: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.app-title span
+{
+    outline: none;
+}
+
+.app-login span
+{
+    position: relative;
+    float: right;
+    min-width: 40px;
+    background: #ccc;
+    color: black;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.app-login span
+{
+    outline: none;
+    font-size: 10pt;
+    margin: 5px;
+}
+
+.app-menu
+{
+    background: #ccc;
+    max-height: 40px;
+    min-height: 18px;
+    padding: 10px;
+    font-size: 10pt;
+}
+
+.app-menu a
+{
+    margin: 15px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.app-menu-options
+{
+    position: relative;
+    float: right;
+}
+
+.app-menu a:hover
+{
+    border-bottom: 1px solid black;
+}
+
+#welcome-msg
+{
+    cursor:default;
+}
+
+.red
+{
+    color: red;
+}

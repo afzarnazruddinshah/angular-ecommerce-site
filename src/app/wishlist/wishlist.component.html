@@ -1,0 +1,26 @@
+<div class="app-home">
+
+    <div class="home-title">
+           
+            <p id="app-home-title">Hey {{ _fname }}, Your Wishlist Is Awesome:</p>
+    </div>
+                   
+    <div class="home-products">
+
+            <div class="row">
+                    <div class="column" *ngFor="let prod of filteredWishlist2">
+                            <div>
+                                <product
+                                 [prod]="prod" 
+                                 [wlclass]="wlclass"
+                                 (chwl)="updateWL($event)"
+                                 ></product>
+                            </div>
+                    </div>
+            </div>
+            
+    </div>
+
+</div>
+
+

@@ -1,0 +1,42 @@
+.testimonials
+{
+    position: relative;
+    top: 40px;
+    left: 150px;
+    width: 50%;
+}
+
+.testimonial
+{
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    border:1px solid #ccc;
+    max-width: 350px;
+    position: relative;
+    left: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+ 
+}
+
+#shname
+{
+    font-size: 16pt;
+}
+
+#shemail
+{
+    font-size: 12pt;
+    margin: 5px;
+}
+
+#api-error-msg
+{
+    color: red;
+}
+
+
+.dummy
+{
+    background: black;
+}

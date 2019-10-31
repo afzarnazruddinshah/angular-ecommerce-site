@@ -1,0 +1,69 @@
+<div class="app-home">
+
+    <div class="home-title">
+        <p id="app-home-title"> Welcome to AngKart Sea Foods  
+        <span id="app-home-desc"> <br/> We serve first quality fresh sea foods and We mean it</span> </p>
+    </div>
+
+    <div class="filters">
+            <div class="filter-options">
+           <span> Filter By:  </span>
+            <select #prodfil (change)="changeProdType(prodfil.value)">
+                <option value="All"> All</option>
+                <option value="Crab"> Crab</option>
+                <option value="Fish"> Fish</option>
+                <option value="Prawn"> Prawn</option>
+            </select>
+            
+            &nbsp; &nbsp;
+            <mat-form-field>
+                    <mat-placeholder>
+                            <mat-icon>search</mat-icon> Search any product 
+                        </mat-placeholder>
+                    <input 
+                    matInput
+                    type="text"
+                    name="search-filter" 
+                    (change)="changeSearchMode(2)"
+                    [(ngModel)]="searchterm" 
+                    />
+                </mat-form-field>
+            </div>
+       
+    </div>
+    <br>
+    <br><br><br>
+
+<div class="home-products">
+
+                <div class="row" *ngIf="searchModeId===1">
+                        <div class="column" *ngFor="let prod of products">
+                        
+                                <div *ngIf="prod.prodtype===itemType">
+                                    <product [prod]="prod" [wlclass]="wlclass"></product>
+                                </div>
+                        </div>
+                </div>
+
+                        <div class="row" *ngIf="searchModeId===2">
+                                <div class="column" *ngFor="let prod of products | filter:searchterm">
+                                
+                                            <product [prod]="prod"></product>
+                                    
+                                </div>
+                              
+                        </div>
+
+                               
+                
+                </div>
+
+                <div class="footer">
+                    footer comes here
+                </div>   
+                
+</div>
+
+
+
+  

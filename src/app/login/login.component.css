@@ -1,0 +1,33 @@
+.login-dialog
+{
+    height: 330px;
+    margin: 15px;
+
+}
+
+#signup-button
+{
+    text-decoration: underline;
+    cursor: pointer;
+    color: purple;
+   
+}
+
+#newacc
+{
+    font-size: 11pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+#error-msg
+{
+    font-size: 10pt;
+    color: red;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#login-title
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

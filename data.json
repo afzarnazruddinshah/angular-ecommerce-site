@@ -1,0 +1,22 @@
+{
+      "users": [
+        { 
+            "email": "livingstone.it@gmail.com",
+            "pwd": "livingstone123",
+            "fname" : "Livingstone"
+        },
+        {
+          "email": "sai.avinash@gmail.com",
+          "pwd": "saiavinash123",
+          "fname" : "Avinash"
+        },
+        {
+          "email": "apurva.kasupreddy@gmail.com",
+          "pwd": "apurva123",
+          "fname" : "Apurva"
+        }
+      ],
+      "names": [
+        {"name" : "Rakhi"}
+      ]
+}

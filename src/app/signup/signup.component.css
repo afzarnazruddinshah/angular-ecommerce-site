@@ -1,0 +1,72 @@
+.signup-form
+{
+    position: relative;
+    left: 250px;
+    top: 20px;
+    max-width: 700px;
+    min-width: 300px;
+    margin: 5px;
+    padding: 10px 32px;
+}
+
+/* .signup-form input, select, button
+{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.signup-form input:focus, select:focus
+{
+    background: rgb(252, 255, 96);
+    color: black;
+} */
+
+small
+{
+    position: relative;
+    left: 11px;
+    font-weight: 500;
+}
+
+button[type="submit"]
+{
+    cursor: pointer;
+    padding: 8px 20px;
+    background: blue;
+    color: white;
+
+}
+
+#signup-title
+{
+    max-width: 350px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.error-msg
+{
+    font-size: 10pt;
+    color: red;
+    position: relative;
+    top: -12px;
+    left: 16px;
+    /* display: none; */
+}
+
+/* .invalid
+{
+    border-botto: 1px solid red;
+} */
+
+.dispnone
+{
+    display: none;
+}
+
+option
+{
+    color: black;
+}

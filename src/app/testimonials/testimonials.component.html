@@ -1,0 +1,21 @@
+<div class="testimonials">
+
+    <h2> Our StakeHolders:</h2>
+    <div class="testimonial" *ngFor="let item of userStories| slice:0:10">
+        <span>{{ item.id }}.</span> &nbsp;
+        <span id="shname">Name : {{ item.name }}</span> <br>
+        <span id="shemail">&nbsp; &nbsp; &nbsp; Email : {{ item.email }}</span>
+
+    </div>
+
+    <div *ngIf="userStories.length === 0">
+        <span id="api-error-msg" >404 Error: Please check your internet connection and refresh the page</span>
+    </div>
+
+    <!-- <div class="dummy">
+        
+       <span> {{ usersdummy }}</span>
+    </div> -->
+   
+</div>
+

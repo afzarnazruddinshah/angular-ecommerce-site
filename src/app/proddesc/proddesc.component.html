@@ -1,0 +1,53 @@
+<div class="product-desc">
+
+    <div class="product-details">
+
+        <h1> {{ product.prodname }}</h1>
+        <p> Quantity: {{ product.prodqty}} </p>
+        <p> Price : {{ product.prodprice | currency:'INR'}} </p>
+        <small> The Product description given by the seller comes here.</small>
+        <br> <br>
+        <small id="availability"
+        [style.background]="qtyInStock(product.availability) ? 'green': 'red'"
+        > {{product.availability}} </small>
+        <br>  <br> <br><br> <br> <br><br>
+        <button id="backbtn" type="button" mat-raised-button routerLink="">
+                Back to Home
+            </button>
+    </div>
+
+    <div class="product-cart" *ngIf="product.availability === 'In Stock'">
+        <br>
+        <h2> Add to cart:</h2>
+        <button
+         type="button" 
+         (click)="addQty()"
+         > + 
+        </button> 
+        
+        <span> &nbsp;  Quantity  &nbsp;</span> 
+
+        <button
+         type="button"
+         (click)="subQty()"
+         [disabled]="subDisabled == true"
+         > - 
+        </button>
+
+        <br> <br>
+        <small id> Quantity &nbsp;: {{ cart.qty }}g</small> &nbsp;
+        <small> Item Cost : {{cart.cost }}</small>
+        <br> <br>
+        <button style="background:rgb(0, 0, 255);color:white;" type="button" (click)="addToCart()" mat-raised-button >Add to Cart</button>
+    </div>
+
+    <div class="product-cart" *ngIf="product.availability !== 'In Stock'">
+        <h2 style="color:red;" id="#outofstockmsg"> Sorry for the inconvenience. <br>This item is not available for now.</h2>
+    </div>
+
+
+  
+        
+    
+
+</div>

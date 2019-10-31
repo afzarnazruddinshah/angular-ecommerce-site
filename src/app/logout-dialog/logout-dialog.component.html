@@ -1,0 +1,11 @@
+<h3>Hey {{ data.fname }}</h3>
+<div mat-dialog-content>
+  <p id="logout-qn">Are you sure you want to logout?</p>
+  
+</div>
+
+<div class="logout-options">
+  <button class="logout-button"(click)="onNoClick()" cdkFocusInitial>No</button>
+  <button class="logout-button" (click)="logout()">Yes</button>
+</div>
+<!--  -->

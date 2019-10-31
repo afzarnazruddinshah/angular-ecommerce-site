@@ -1,0 +1,49 @@
+<div class="cart-comp">
+    <div class="cart-welcome">
+
+        <h2> Hey {{ userfname }}, Your cart is awesome :D</h2>
+
+    </div>
+    <table>
+
+    <div class="cart-items">
+        
+       
+        
+        <div class="cart-item heading">
+            <tr>
+                <td id="cart-index">#</td>
+                <td id="cart-name">Product Name</td>
+                <td id="cart-qty">Qty</td>
+                <td id="cart-cost"> Cost</td>
+                <td id="cart-remove">Remove</td>
+            </tr>
+           
+        </div>
+        <div class="cart-item" *ngFor="let item of cart; let i = index">
+            <tr>
+                <td id="cart-index"> {{ i+1}}  {{ item.prodid }}</td>
+
+                <td id="cart-name" appProdheader (click)="goProdDesc(item)"> {{ item.prodname}}</td>  &nbsp;
+                <td id="cart-qty"> {{ item.qty }} {{ item.qty > 49 ? g : kg }}</td> &nbsp;
+                <td id="cart-cost"> {{ item.cost | currency:'INR' }} </td>
+                <td id="cart-remove"> <button type="button"mat-raised-button style="background: rgb(255, 42, 42);color:white" (click)="removeFromCart(item)"> Remove </button></td>
+            </tr>
+        </div>  
+
+    </div>
+
+    <div class="cart-total-cost">
+        <tr>
+        <td id="cart-index"></td>
+        <td id="cart-name"></td>
+        <td id="cart-qty"></td>
+        <td id="cart-cost"></td>
+        <td id="cart-tcost">  <button mat-raised-button style="background: orange;font-weight: bold;"> Total Cost: {{ totalcost | currency:'INR' }}</button> </td>
+        <td id="cart-checkout"> <button type="button" mat-raised-button style="background: blue;color:white;" (click)="checkout()"> Checkout</button></td>
+        </tr>
+      
+    </div>
+        </table>
+
+</div>

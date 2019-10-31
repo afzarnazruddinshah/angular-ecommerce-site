@@ -1,0 +1,50 @@
+<div class="header">
+
+<div class="app-header">
+
+          <div class="app-title">
+            <span 
+            routerLink="" 
+            title="Visit Home Page">
+            Angkart Sea Foods
+            </span> 
+          </div>
+        
+          <div class="app-login" *ngIf="path===false">
+            
+            <span
+            routerLink="login"
+            title="Click here to signup">
+            Login / Signup
+          </span> 
+          </div>
+
+    
+          <div class="app-login" *ngIf="path === true">
+            <span
+            title="Click here to Logout"
+            (click)="openDialog()"
+            >
+            Logout
+          </span> 
+        
+          <span id="welcome-msg"> Hello, {{ fname }}  </span> 
+        </div>
+
+      </div>
+
+  <div class="app-menu">
+
+    <div class="app-menu-options">
+        <a routerLink="">Food Items</a> 
+        <a routerLink="testimonials">Our StakeHolders</a>
+        <a routerLink="wishlist">My Wishlist <i class="fas fa-heart red"></i></a>
+        <a routerLink="cart" matBadge="4" matBadgeOverlap="false" matBadgeColor="warn" matBadgeSize='small'>My Cart</a>
+        <a (click)="myOrdersConst()">My Orders</a>
+        
+    </div>
+    
+  </div>
+
+
+</div>

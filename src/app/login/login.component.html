@@ -1,0 +1,57 @@
+<div class="login-dialog">
+
+    
+    <form (submit)="checkLogin(data)">
+    <h2 id="login-title"> Login :</h2>
+    <div class="form-field">
+        <mat-form-field>
+            <input 
+                required
+                id="email"
+                name="email"
+                type="text" 
+                #email
+                matInput 
+                [(ngModel)]="data.email" 
+                placeholder="Email"
+                />
+            
+        </mat-form-field>
+    </div>
+
+    <div class="form-field"> 
+        <mat-form-field>
+            <input 
+            required
+            #password
+                type="password" 
+                name="password"
+                id="password"
+                matInput 
+                [(ngModel)]="data.password" 
+                placeholder="Password" 
+                />
+        </mat-form-field>
+    </div>
+
+    <span id="error-msg" *ngIf="loginError">The email or password is incorrect</span>
+
+
+<div mat-dialog-actions class="form-field">
+ 
+
+            <button 
+            type="submit" 
+            mat-raised-button
+            [disabled]="email.value==='' || password.value ===''" 
+            >
+            Login
+        </button>
+        &nbsp;
+        <button mat-raised-button (click)="onNoClick()">Cancel</button>
+</div>
+</form>
+<br />
+<p id="newacc"> Don't have an account? <a id="signup-button" (click)="goToSignUp()">Sign up</a></p>
+
+</div>

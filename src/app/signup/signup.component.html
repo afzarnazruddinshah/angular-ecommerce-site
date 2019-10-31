@@ -1,0 +1,184 @@
+<div class="signup-form">
+
+        <!-- {{ signupModel | json }} -->
+    <h2 id="signup-title"> Signup with our Application</h2>
+    <form> 
+
+    
+        <br />
+        <div>
+                <mat-form-field class="example-full-width">
+                        <input matInput
+                         type="text"
+                         placeholder="First Name"
+                         id="fname"
+                         name="fname"
+                         pattern="^[a-zA-Z]{2,30}$"
+                         [(ngModel)]="signupModel.fname"  
+                         required
+                         #fname="ngModel"
+                         [class.invalid]="fname.touched && fname.invalid"
+                         >
+                      </mat-form-field>
+        <br />
+        <small [class.dispnone]="fname.untouched || fname.valid"  [class.error-msg]="fname.touched && fname.invalid"> First Name is required</small>
+            
+      
+</div>
+
+<div>
+    <mat-form-field>
+    <input matInput
+        type="text"
+        id="lname"
+        name="lname"
+        placeholder="Last Name"
+        pattern="^[a-zA-Z]{2,30}$"
+        required
+        [(ngModel)]="signupModel.lname"
+        #lname="ngModel"
+        />
+    </mat-form-field>
+        <br />
+        <small 
+        [class.dispnone]="lname.untouched || lname.valid" 
+        [class.error-msg]="lname.touched && lname.invalid"
+        > Last name is required</small>
+    
+    </div>
+
+    <div>
+        <mat-form-field>
+            
+            <input  matInput
+                type="number"
+                id="age"
+                name="age"
+                placeholder="Age"
+                min="15"
+                max="100"
+                required
+                [(ngModel)]="signupModel.age"
+                #age="ngModel"
+                />
+        </mat-form-field>
+        <br />
+        <small
+        [class.dispnone]="age.untouched || age.valid" 
+        [class.error-msg]="age.touched && age.invalid"
+        > Age is required</small>
+    </div>
+
+<div>
+    <mat-form-field>  
+            <mat-select
+            id="gender"
+            name="gender"
+            placeholder="Gender"
+            [(ngModel)]="signupModel.gender"
+            #gender="ngModel"
+            required
+            >
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female"> Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+    <br />
+    <small
+    [class.dispnone]="gender.untouched || gender.valid" 
+    [class.error-msg]="gender.touched && gender.invalid"
+    >Please select any one</small>
+</div>
+
+    <div>
+        <mat-form-field>
+            <input matInput
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+            required
+            [(ngModel)]="signupModel.email"
+            #email="ngModel"
+            />
+        </mat-form-field>
+    <br />
+    <small
+    [class.dispnone]="email.untouched || email.valid" 
+    [class.error-msg]="email.touched && email.invalid"
+    
+    >Please enter valid email ID</small>
+
+</div>
+
+
+<div>
+    <mat-form-field>
+        <input matInput
+        type="number"
+        id="phone"
+        name="phone"
+        placeholder="Phone"
+        required
+        pattern="^[2-9]{1}\d{9}"
+        [(ngModel)]="signupModel.phone"
+        #phone="ngModel"
+        />
+    </mat-form-field>
+<br />
+<small
+[class.dispnone]="phone.untouched || phone.valid" 
+[class.error-msg]="phone.touched && phone.invalid"
+
+>Please enter valid phone number</small>
+</div>
+
+<div>
+    <mat-form-field>
+        <input matInput
+        type="password"
+        id="pwd"
+        name="pwd"
+        placeholder="Password"
+        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$"
+        required
+        [(ngModel)]="signupModel.pwd"
+        #pwd="ngModel"
+        />
+    </mat-form-field>
+    <br />
+    <small
+    [class.dispnone]="pwd.untouched || pwd.valid" 
+    [class.error-msg]="pwd.touched && pwd.invalid"
+    >Password should contain 1 small character, 1 capital charater, <br /> 1 special char, 1 number and must be at least 8 characters</small>
+
+</div>
+   <div>
+    <mat-form-field>
+    <input matInput
+    type="password"
+    id="confirmpwd"
+    name="confirmpwd"
+    placeholder="Confirm Password"
+    required
+    [(ngModel)]="signupModel.confirmpwd"
+    #confirmpwd="ngModel"
+    />
+</mat-form-field>
+    <br />
+    <small
+    [class.dispnone]="confirmpwd.untouched || confirmpwd.valid" 
+    [class.error-msg]="confirmpwd.touched && confirmpwd !== pwd"
+    > Passwords doesn't match</small>
+
+</div>
+
+    <br /><br />
+    <button 
+    type="submit"
+    (click)="registerNewUser(signupModel)"
+    > Submit </button>
+    </form>
+</div>

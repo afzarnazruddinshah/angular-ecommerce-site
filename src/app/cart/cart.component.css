@@ -1,0 +1,51 @@
+.cart-comp
+{
+    position: relative;
+    left: 200px;
+}
+
+.cart-items
+{
+    background: rgb(238, 238, 238);
+    margin: 5px;
+    max-width: 880px;
+    overflow: scroll;
+    max-height: 550px;
+}
+
+.cart-item
+{
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.heading
+{
+    margin:2px;
+    border: 1px solid rgb(219, 219, 219);
+}
+#cart-index, #cart-name, #cart-qty, #cart-cost
+{
+    max-width: 200px;
+    min-width: 200px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+#cart-index
+{
+    max-width: 50px;
+    min-width: 50px;
+}
+
+
+ .cart-total-cost
+{
+    position: relative;
+    float: right;
+    right: 140px;
+} 
+
+
