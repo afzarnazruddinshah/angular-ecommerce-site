@@ -2,6 +2,7 @@ import { ProductsService } from './../products.service/products.service';
 import { UserfeaturesService } from './../userfeatures.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-cart',
@@ -22,7 +23,8 @@ export class CartComponent implements OnInit {
   constructor( 
     public router:Router,
     public userFeatures: UserfeaturesService,
-    public productsService: ProductsService
+    public productsService: ProductsService,
+    public _snackBar: MatSnackBar
   ) { }
 
   ngOnInit() 
@@ -40,14 +42,14 @@ export class CartComponent implements OnInit {
   {
     let dummy = this.productsService.getProducts(); //Get Products List
     let id = String(localStorage.getItem('userId')); //Get UserId from LocalStorage
-    console.log(dummy);
+    // console.log(dummy);
     //Get Cart Items
     this.userFeatures.getCart(id)
     .subscribe( 
       data => {
-      console.log(data);
+      // console.log(data);
       this.cart = data; //storing the cart list
-      console.log(this.cart);
+      // console.log(this.cart);
       var i;
       
       for (i=0; i< this.cart.length; i++) //Extracting only the product ids
@@ -62,7 +64,7 @@ export class CartComponent implements OnInit {
         this.cartProducts.push( dummy.filter( item=> item.prodid === this.ids[i])[0].prodname);
 
       }
-      console.log(this.cartProducts);
+      // console.log(this.cartProducts);
 
       for (i=0; i< this.cart.length; i++)
       {
@@ -71,8 +73,8 @@ export class CartComponent implements OnInit {
       }
 
       // this.cart.prodname = this.cartProducts;
-      console.log(this.cart);
-      console.log(this.totalcost);
+      // console.log(this.cart);
+      // console.log(this.totalcost);
 
     },
     err=> {
@@ -85,12 +87,15 @@ export class CartComponent implements OnInit {
 
   removeFromCart(item)
   {
-    console.log(item);
+    // console.log(item);
+    this._snackBar.open(`Very Sorry 🤐: Removing from cart feature is under construction`, null, {
+      duration: 2500,
+    });
   }
 
   goProdDesc(prod)
   {
-    console.log(prod.pid);
+    // console.log(prod.pid);
     this.router.navigate(['products', prod.pid]);
   }
 

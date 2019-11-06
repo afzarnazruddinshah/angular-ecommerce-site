@@ -1,7 +1,8 @@
-<div mat-dialog-content class="login-dialog">
+<div class="login-dialog">
 
     <form (submit)="checkLogin(loginModel)">
     <h2 id="login-title"> Login :</h2>
+    <br>
     <div class="form-field">
         <mat-form-field>
             <input 
@@ -33,10 +34,10 @@
         </mat-form-field>
     </div>
 
-    <br />
+   
     <span id="error-msg" *ngIf="loginError">The email or password is incorrect</span>
 
-
+    <br /><br />
 <div mat-dialog-actions class="form-field">
  
 

@@ -102,4 +102,7 @@ import { OrdersuccessComponent } from './ordersuccess/ordersuccess.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  
+}

@@ -38,11 +38,11 @@ export class SignupComponent implements OnInit {
     .subscribe((res)=> {
       console.log(res);
       console.log(res.token);
-      localStorage.setItem('token', res.token);
+      // localStorage.setItem('token', res.token);
       
     });
     
-    window.location.href = "";
+    window.location.href = "login";
   }
 
 }

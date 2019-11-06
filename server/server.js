@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient
 const date = require('date-and-time');  //for naming collections
-
 var cors = require('cors');
 const jwt = require('jsonwebtoken');
+
 
 // Initialize the app
 const app = express();
@@ -18,6 +18,7 @@ app.use(bodyParser.json());  //Needed
 // Then use it before your routes are set up:
 app.use(cors());
 const PORT = 3001;
+
 
 
 app.get('', (req, res)=> {
@@ -34,7 +35,7 @@ MongoClient.connect(mongoDbURL, (err, database) => {
      // whatever your database name is
      
      app.listen(PORT, () => {
-     console.log('listening on 3001')
+     console.log('listening on 3001');
   })
 });
 // Start the server
@@ -47,17 +48,16 @@ MongoClient.connect(mongoDbURL, (err, database) => {
 *********************************************************************/
 
 app.post('/api/register', (req, res)=>{
-  
   let userData = req.body;
   db.collection('users').insertOne(userData, (err, result)=> {
       if (err) 
       {
         console.log(err);
+        res.status(401).send('error');
         return;
       }
       else
       {
-        // console.log('line no 159:'+result);
         console.log(result.insertedId);
         let payload = { subject: result.insertedId};
         let token = jwt.sign(payload, 'secretKey');
@@ -73,12 +73,12 @@ app.post('/api/login', (req, res)=> {
     let userData = req.body;
   let iemail = userData.email;
   let ipwd = userData.pwd;
-  console.log(iemail, ipwd);
+  // console.log(iemail, ipwd);
   db.collection('users').findOne(
     { email: iemail, pwd: ipwd}, 
     (err, result)=>{
     if (err) {
-      console.log(err);
+      // console.log(err);
       res.status(401).send(err);
       return;
     }
@@ -94,7 +94,7 @@ app.post('/api/login', (req, res)=> {
       else
       {
 
-          console.log(result);
+          // console.log(result);
           let payload = { subject: result._id};
           let token = jwt.sign(payload, 'secretKey');
           res.status(200).send(
